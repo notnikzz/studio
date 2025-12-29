@@ -51,9 +51,12 @@ export function ApologyCard() {
             <div className="text-center space-y-4 text-foreground/80 font-body text-lg animate-fade-in">
               <p>I'm so sorry for hurting you.</p>
               <p>
-                You mean the world to me. Out of 8 billion people on this
-                planet, your smile is the only one that matters. You are the most
-                important person in my life.
+                My dearest Urvashe, out of 8 billion smiles in this world, yours
+                is the one that lights up my whole life. Every moment with you
+                feels like a dream I never want to wake from. You mean more to
+                me than words can say, and I’m so serious about us — about our
+                future, our love, and building something beautiful together
+                that lasts forever. ❤️
               </p>
             </div>
             {!showPictures && (
