@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Alegreya', 'serif'],
+        headline: ['Alegreya', 'serif'],
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,16 @@ export default {
             height: '0',
           },
         },
+        'pulse-slow': {
+          '50%': {
+            opacity: '0.7',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-slow': 'pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
     },
   },

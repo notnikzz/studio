@@ -1,3 +1,22 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "nikhil-urvashe",
+      "description": "Nikhil and Urvashe together",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1579369772188-7aa75cd44c57?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBwaG90b3xlbnwwfHx8fDE3NjY5OTk0Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "couple photo"
+    },
+    {
+      "id": "fan-roof",
+      "description": "A photo of a fan and a roof, a shared memory",
+      "imageUrl": "https://images.unsplash.com/photo-1593252119075-37e01538fe1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYW4lMjByb29mfGVufDB8fHx8MTc2Njk5OTQ0MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fan roof"
+    },
+    {
+      "id": "nikhil-smiling",
+      "description": "Nikhil smiling sincerely",
+      "imageUrl": "https://images.unsplash.com/photo-1629185752040-57f6fa9b4f53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWFuJTIwc21pbGluZ3xlbnwwfHx8fDE3NjY5MzAxNTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man smiling"
+    }
+  ]
 }
