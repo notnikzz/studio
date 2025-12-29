@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 350 100% 98%; /* Light Pink #FFF5F7 */
+    --background: 20 50% 98%; /* light cream */
     --foreground: 336 84% 15%;
-    --card: 0 0% 100%;
+    --card: 20 30% 95%; /* Lighter cream for card */
     --card-foreground: 336 84% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 336 84% 15%;
-    --primary: 340 82% 62%; /* Medium Pink #F472B6 */
-    --primary-foreground: 0 0% 98%;
+    --primary: 16 80% 85%; /* soft rose */
+    --primary-foreground: 336 84% 15%;
     --secondary: 345 100% 95%; /* Lighter Pink #FFEBF3 */
     --secondary-foreground: 336 84% 15%;
     --muted: 345 100% 97%;
     --muted-foreground: 336 70% 40%;
-    --accent: 345 100% 95%; /* Lighter Pink #FFEBF3 */
+    --accent: 10 70% 80%; /* dusty rose */
     --accent-foreground: 336 84% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 340 60% 90%;
-    --input: 340 60% 90%;
-    --ring: 340 82% 62%; /* Medium Pink #F472B6 */
+    --border: 16 80% 90%;
+    --input: 16 80% 90%;
+    --ring: 16 80% 85%; /* Soft Rose */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;

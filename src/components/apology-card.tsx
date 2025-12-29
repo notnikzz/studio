@@ -104,13 +104,13 @@ export function ApologyCard() {
               </div>
             )}
             <div className="!my-8">
-              <div className="bg-primary text-primary-foreground p-4 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <div className="bg-accent text-accent-foreground p-4 rounded-xl text-center shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <div className="flex items-center justify-center gap-3">
                   <Heart className="w-6 h-6 animate-pulse" />
                   <p className="font-headline text-xl">September 8th</p>
                   <Heart className="w-6 h-6 animate-pulse" />
                 </div>
-                <p className="text-sm text-primary-foreground/80 mt-1">
+                <p className="text-sm text-accent-foreground/80 mt-1">
                   The day I started liking you
                 </p>
               </div>
@@ -192,22 +192,40 @@ export function ApologyCard() {
 
   return (
     <>
-      {showHeartShower &&
-        Array.from({ length: 50 }).map((_, i) => (
-          <Heart
-            key={i}
-            className="absolute text-primary animate-fall"
-            style={{
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 24 + 12}px`,
-              height: `${Math.random() * 24 + 12}px`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${Math.random() * 3 + 2}s`,
-              opacity: Math.random() * 0.5 + 0.5,
-            }}
-            fill="currentColor"
-          />
-        ))}
+      {showHeartShower && (
+        <>
+          {Array.from({ length: 50 }).map((_, i) => (
+            <Heart
+              key={`heart-${i}`}
+              className="absolute text-primary animate-fall"
+              style={{
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 24 + 12}px`,
+                height: `${Math.random() * 24 + 12}px`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${Math.random() * 3 + 2}s`,
+                opacity: Math.random() * 0.5 + 0.5,
+              }}
+              fill="currentColor"
+            />
+          ))}
+          {Array.from({ length: 25 }).map((_, i) => (
+            <div
+              key={`rose-${i}`}
+              className="absolute animate-fall text-4xl"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${Math.random() * 3 + 3}s`,
+                fontSize: `${Math.random() * 2 + 1.5}rem`,
+                opacity: Math.random() * 0.7 + 0.3,
+              }}
+            >
+              🌹
+            </div>
+          ))}
+        </>
+      )}
       <div
         className={cn(
           'transition-all duration-1000 ease-in-out',
