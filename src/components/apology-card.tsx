@@ -49,14 +49,7 @@ export function ApologyCard() {
         {showApology && (
           <>
             <div className="text-center space-y-4 text-foreground/80 font-body text-lg animate-fade-in">
-              <p>
-                I'm so sorry for hurting you.
-              </p>
-              <p>
-                You are the most important person in my life, and the thought of
-                a world without your smile is unbearable. I am serious about
-                you, about us, and about building a future together.
-              </p>
+              <p>I'm so sorry for hurting you.</p>
             </div>
             {!showPictures && (
               <Button
@@ -64,7 +57,7 @@ export function ApologyCard() {
                 size="lg"
                 className="bg-primary/90 hover:bg-primary text-primary-foreground mt-4 animate-pulse"
               >
-                <Camera className="mr-2" /> See our memories
+                <Camera className="mr-2" /> US
               </Button>
             )}
           </>
