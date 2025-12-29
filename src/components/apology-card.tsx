@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -23,6 +24,7 @@ export function ApologyCard() {
   const [showLoveMessage, setShowLoveMessage] = useState(false);
   const [loveLevel, setLoveLevel] = useState(0);
   const [showHeartShower, setShowHeartShower] = useState(false);
+  const [showFinalMessage, setShowFinalMessage] = useState(false);
 
   const nikhilUrvashePhoto = PlaceHolderImages.find(
     (p) => p.id === 'nikhil-urvashe'
@@ -39,10 +41,12 @@ export function ApologyCard() {
   useEffect(() => {
     if (loveLevel === 100) {
       setShowHeartShower(true);
+      setShowFinalMessage(true);
       const timer = setTimeout(() => {
         setShowHeartShower(false);
+        setShowFinalMessage(false);
         setLoveLevel(0); // Reset for another go
-      }, 5000); // Hearts will shower for 5 seconds
+      }, 5000); // Hearts will shower and message will show for 5 seconds
       return () => clearTimeout(timer);
     }
   }, [loveLevel]);
@@ -226,6 +230,15 @@ export function ApologyCard() {
           ))}
         </>
       )}
+
+      {showFinalMessage && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center animate-fade-in">
+          <div className="bg-card text-card-foreground p-8 rounded-2xl shadow-2xl text-center animate-fade-in">
+            <p className="text-3xl font-headline">haha, i love you too🐷</p>
+          </div>
+        </div>
+      )}
+
       <div
         className={cn(
           'transition-all duration-1000 ease-in-out',
