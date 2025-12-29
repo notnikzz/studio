@@ -50,9 +50,9 @@ export function ApologyCard() {
           <>
             <div className="text-center space-y-4 text-foreground/80 font-body text-lg animate-fade-in">
               <p>
-                I am so incredibly sorry. My actions were thoughtless, and I
-                deeply regret the hurt I've caused you. There's no excuse for
-                it, and I want to be completely open and honest with you.
+                My heart aches knowing I hurt you. My behavior was out of line,
+                and there’s no good excuse for it. Please know that my actions
+                don’t reflect the depth of my feelings for you.
               </p>
               <p>
                 You are the most important person in my life, and the thought of
