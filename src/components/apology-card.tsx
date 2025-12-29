@@ -50,7 +50,7 @@ export function ApologyCard() {
           <>
             <div className="text-center space-y-4 text-foreground/80 font-body text-lg animate-fade-in">
               <p>
-                I'm so sorry for hurting you. My behavior was out of line.
+                My behaviour was out of line.
               </p>
               <p>
                 You are the most important person in my life, and the thought of
