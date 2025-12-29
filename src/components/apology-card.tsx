@@ -57,7 +57,7 @@ export function ApologyCard() {
                 size="lg"
                 className="bg-primary/90 hover:bg-primary text-primary-foreground mt-4 animate-pulse"
               >
-                <Camera className="mr-2" /> US
+                <Camera className="mr-2" /> See our memories
               </Button>
             )}
           </>
