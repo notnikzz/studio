@@ -12,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
 import { cn } from '@/lib/utils';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -20,6 +21,8 @@ export function ApologyCard() {
   const [showApology, setShowApology] = useState(false);
   const [showPictures, setShowPictures] = useState(false);
   const [showLoveMessage, setShowLoveMessage] = useState(false);
+  const [loveLevel, setLoveLevel] = useState(0);
+  const [showHeartShower, setShowHeartShower] = useState(false);
 
   const nikhilUrvashePhoto = PlaceHolderImages.find(
     (p) => p.id === 'nikhil-urvashe'
@@ -32,6 +35,18 @@ export function ApologyCard() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (loveLevel === 100) {
+      setShowHeartShower(true);
+      const timer = setTimeout(() => {
+        setShowHeartShower(false);
+        setLoveLevel(0); // Reset for another go
+      }, 5000); // Hearts will shower for 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [loveLevel]);
+
 
   const cardContent = (
     <>
@@ -149,36 +164,75 @@ export function ApologyCard() {
             better, to be the man you deserve.
           </p>
           <p className="text-2xl font-headline text-primary">I love you.</p>
+
+          <div className="pt-8 space-y-4">
+            <p className="text-muted-foreground">How much do you love me?</p>
+            <Slider
+              value={[loveLevel]}
+              onValueChange={(value) => setLoveLevel(value[0])}
+              max={100}
+              step={1}
+              thumb={
+                <Heart
+                  className="text-primary transition-all duration-300"
+                  fill="currentColor"
+                  style={{
+                    width: `${20 + loveLevel * 0.4}px`,
+                    height: `${20 + loveLevel * 0.4}px`,
+                  }}
+                />
+              }
+            />
+            <p className="text-2xl font-bold text-primary">{loveLevel}%</p>
+          </div>
         </div>
       )}
     </>
   );
 
   return (
-    <div
-      className={cn(
-        'transition-all duration-1000 ease-in-out',
-        isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-      )}
-    >
-      <Card className="w-full max-w-4xl mx-auto bg-card/80 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden border-primary/10">
-        <div className="flex flex-col p-8 md:p-12">
-          <CardHeader className="p-0 mb-6 text-center">
-            <CardTitle className="font-headline text-4xl md:text-5xl text-primary">
-              To My Dearest Urvashe,
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-0 flex-grow">
-            {cardContent}
-          </CardContent>
-          <CardFooter className="p-0 mt-auto pt-8 flex flex-col items-center gap-2">
-            <p className="font-headline text-2xl text-foreground">
-              With all my love and sincerity,
-            </p>
-            <p className="font-headline text-3xl text-primary/90">Nikhil</p>
-          </CardFooter>
-        </div>
-      </Card>
-    </div>
+    <>
+      {showHeartShower &&
+        Array.from({ length: 50 }).map((_, i) => (
+          <Heart
+            key={i}
+            className="absolute text-primary animate-fall"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 24 + 12}px`,
+              height: `${Math.random() * 24 + 12}px`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${Math.random() * 3 + 2}s`,
+              opacity: Math.random() * 0.5 + 0.5,
+            }}
+            fill="currentColor"
+          />
+        ))}
+      <div
+        className={cn(
+          'transition-all duration-1000 ease-in-out',
+          isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+        )}
+      >
+        <Card className="w-full max-w-4xl mx-auto bg-card/80 backdrop-blur-sm shadow-2xl rounded-3xl overflow-hidden border-primary/10">
+          <div className="flex flex-col p-8 md:p-12">
+            <CardHeader className="p-0 mb-6 text-center">
+              <CardTitle className="font-headline text-4xl md:text-5xl text-primary">
+                To My Dearest Urvashe,
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 flex-grow">
+              {cardContent}
+            </CardContent>
+            <CardFooter className="p-0 mt-auto pt-8 flex flex-col items-center gap-2">
+              <p className="font-headline text-2xl text-foreground">
+                With all my love and sincerity,
+              </p>
+              <p className="font-headline text-3xl text-primary/90">Nikhil</p>
+            </CardFooter>
+          </div>
+        </Card>
+      </div>
+    </>
   );
 }
